@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quiz2</title>
+
+<style>
+	body{
+		background-color: #ffd1fc;
+	}
+	.cont2{
+			justify-content: center;
+			column-gap: 50px;
+			display: flex;
+		}
+	.button{
+		border-radius: 20px;
+		background-color: #ffdef5;
+		padding: 15px;
+		width: 150px;
+		height: 80px;
+	}
+</style>
+
+</head>
+<body>
+<center>
+<div class="cont1">
+	<h1><span style="color: #c41085; font-family: Comic Sans">Score Rating</span></h1>
+	<details ontoggle="message1()">
+		<summary style="color: #c41085; font-family: Comic Sans">Instructions</summary>
+			<p style="color: #c41085; font-family: Comic Sans">Input your general grade for each subject in the 3 input boxes. After, click the "calculate" button to compute for your score rating.</p>
+	</details>
+	<br><br>
+</div>
+<div class="cont2"> 
+	<div class="grp1">
+	<img src="https://img.freepik.com/free-vector/colorful-science-objects-icons-vector-set_1308-140707.jpg?semt=ais_hybrid&w=740" width="325">
+	<form>
+		<input type="number" id="science" class="form-control" style="background-color: #fc56ca; height: 30px; width: 200px;">
+	</form>
+</div>
+<div class="grp2">
+	<img src="https://img.freepik.com/free-vector/maths-realistic-chalkboard-background_23-2148159115.jpg?semt=ais_hybrid&w=740" width="325">
+	<form>
+		<input type="number" id="math" class="form-control" style="background-color: #fc56ca; height: 30px; width: 200px;">
+	</form>
+</div>
+<div class="grp2">
+	<img src="https://img.freepik.com/free-vector/hand-drawn-english-school-illustration_23-2149491453.jpg?semt=ais_hybrid&w=740" width="325">
+	<form>
+		<input type="number" id="english" class="form-control" style="background-color: #fc56ca; height: 30px; width: 200px;">
+	</form>
+</div>
+</div>
+<br>
+<div class="cont3">
+	<button type="submit" class="button" onclick="showResult()">Calculate</button>
+</div>
+
+<script>
+	function showResult(){
+var science = Number(document.getElementById('science').value); // grade for science
+var math = Number(document.getElementById('math').value); // grade for math
+var english = Number(document.getElementById('english').value); // grade for english
+
+ var gen = ((science + math + english) / 3).toFixed(2) ;
+
+
+switch(true){
+case (gen >= 94 && gen <=100):
+	alert("Excellent");
+	break;
+case (gen >=87 && gen <=93.99):
+	alert("Above Satisfactory");
+	break;
+case (gen >=80 && gen <=86.99 ):
+	alert("Satisfactory");
+	break;
+case (gen >=75 && gen <=79.99 ):
+	alert("Needs Improvement");
+	break;
+default:
+	alert("Poor");
+}
+}
+
+</script>
+	
+</center>
+<br>
+<a href="https://docs.google.com/document/d/1hw8L-o3vvTtm6QKKzwzGjlnB8uy6YqRakgXQWJEQfH4/edit?tab=t.0" style="color: #c41085">Sources</a>
+	
+</body>
+</html>
